@@ -1,0 +1,61 @@
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FF000000"
+    >
+
+
+    <androidx.camera.view.PreviewView
+        android:id="@+id/previewView"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:importantForAccessibility="no"
+        app:layout_constraintBottom_toTopOf="@+id/linearLayout"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_100sdp"
+        android:gravity="center_horizontal"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/previewView">
+
+        <ImageButton
+            android:background="@android:color/transparent"
+            android:scaleType="fitCenter"
+            android:id="@+id/captureImg"
+            android:layout_width="72dp"
+            android:layout_height="72dp"
+            app:srcCompat="@drawable/ic_take_picture"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            android:layout_margin="24dp"
+            android:layout_marginTop="@dimen/_5sdp"
+            />
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/recent_image"
+            android:layout_width="45dp"
+            android:layout_height="45dp"
+            android:src="@drawable/ic_launcher_background"
+            app:layout_constraintBottom_toBottomOf="@id/captureImg"
+            app:layout_constraintEnd_toStartOf ="@id/captureImg"
+            app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginEnd="@dimen/_24sdp"
+            android:layout_marginBottom="10dp"
+            android:background="@android:color/transparent"
+            android:focusable="true" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
